@@ -1,21 +1,7 @@
-function analyze(file)
-arguments
-  file (1,1) string
-end
-
-dat = load_data(file);
-
-disp("loaded data from " + datestr(dat.time(1)) + " to " + datestr(dat.time(end)))
-
-end
-
-
 function dat = load_data(file)
 arguments
-  file (1,1) string
+  file (1,1) string {mustBeFile}
 end
-
-assert(isfile(file), 'need JSON file to load')
 
 fid = fopen(file, "r");
 
